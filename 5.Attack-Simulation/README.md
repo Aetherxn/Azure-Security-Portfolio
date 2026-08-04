@@ -1,33 +1,107 @@
-# Microsoft Defender XDR & Defender for Cloud
+# Attack Simulation & Security Validation
 
-This project explores how Microsoft Defender XDR helps detect and respond to real-world cyber threats through hands-on attack simulations. The labs cover different stages of an attack, including **defence evasion, privilege escalation, credential access, execution, and lateral movement**, giving practical insight into how attackers operate and how security teams investigate and respond.
+## Overview
 
-It also demonstrates how alerts, incidents, and investigation data can be used to track malicious activity and improve response in a cloud-native environment. Alongside this, the project highlights how Microsoft Defender for Cloud supports organisations by improving security posture, identifying misconfigurations, and helping maintain compliance across cloud resources.
+This project explores how Microsoft Defender security tools can be used to detect, investigate, and validate security controls through controlled attack simulations.
+
+The purpose of these simulations is to understand common attacker techniques from a defensive security perspective, analyse the telemetry generated during malicious activity, and evaluate how Microsoft security solutions identify and respond to threats.
+
+The project focuses on the relationship between attacker behaviour and defensive visibility, helping develop practical skills in:
+
+- Threat detection
+- Security investigation
+- Alert analysis
+- MITRE ATT&CK mapping
+- Security control validation
+
+---
+
+## Objectives
+
+This project focuses on:
+
+- Understanding common attacker techniques used against enterprise environments
+- Learning how attacker activity appears from a defender's perspective
+- Using Microsoft Defender security tools to analyse suspicious behaviour
+- Reviewing security alerts and investigation data
+- Mapping simulated activity to MITRE ATT&CK techniques
+- Developing practical threat detection and response skills
+- Identifying opportunities to improve security controls
+
+---
+
+## Technologies Used
+
+- Microsoft Defender XDR
+- Microsoft Defender for Cloud
+- Microsoft Sentinel
+- Microsoft Entra ID
+- Azure Virtual Machines
+- Windows Security Logs
+- MITRE ATT&CK Framework
+
+---
+
+## Simulation Methodology
+
+Each attack simulation will follow a defensive security validation approach:
+
+Simulated Attack Technique → Security Telemetry Generated → Microsoft Defender Detection → Alert Investigation → Evidence Collection → Security Improvement Recommendations
+
+
+The objective of each simulation is to understand:
+
+- What attacker activity looks like in an environment
+- What telemetry is generated during an attack
+- How security tools detect suspicious behaviour
+- How analysts investigate and respond to security events
+
+---
 
 ## Simulated Attack Scenarios
 
-## Overview 
+### 1. Execution
+
+(To be completed)
 
 ---
 
-## Problem
+### 2. Credential Access
+
+(To be completed)
 
 ---
 
-## Azure Services Used
+### 3. Privilege Escalation
+
+(To be completed)
 
 ---
 
-## Investigation Summary
+### 4. Defence Evasion
+
+(To be completed)
 
 ---
 
-## Key Findings (IOCs & Evidence)
+### 5. Lateral Movement
+
+(To be completed)
 
 ---
 
-## Security Improvements / Recommendations
+## Investigation Workflow
+
+(To be completed)
+
+---
+
+## Security Improvements
+
+(To be completed)
 
 ---
 
 ## Key Learnings
+
+(To be completed)
