@@ -23,22 +23,7 @@ This portfolio focuses on:
 
 The projects follow the lifecycle of securing and monitoring an Azure environment:
 
-Azure Foundation
-|
-↓
-Identity Security
-|
-↓
-Network Security
-|
-↓
-Security Monitoring & Threat Detection
-|
-↓
-Attack Simulation
-|
-↓
-Incident Response
+Azure Foundation → Identity Security → Network Security → Security Monitoring & Threat Detection → Attack Simulation → Incident Response
 
 ---
 
