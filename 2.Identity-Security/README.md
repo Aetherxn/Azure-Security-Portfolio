@@ -1,60 +1,174 @@
-# Securing Azure Identity with RBAC
+# Identity Security
 
-### Objective
+## Overview
 
-Implement identity and access management controls in Azure using Microsoft Entra ID groups and Azure Role-Based Access Control (RBAC) to enforce least privilege access, improve administrative separation, and reduce the risk of unauthorised privilege escalation.
+Identity is one of the most important security controls in cloud environments. This project focuses on securing Azure access using Microsoft Entra ID groups and Azure Role-Based Access Control (RBAC).
+
+The objective was to implement a least privilege access model where permissions are assigned based on job responsibilities rather than individual users.
+
+This project demonstrates how identity security controls can reduce:
+
+- Excessive permissions
+- Unauthorised access
+- Privilege escalation risk
+- Poor access management practices
 
 ---
 
-## RBAC Architecture Diagram
+# Scenario
+
+A company requires a Service Desk team to manage Azure Virtual Machines as part of their daily responsibilities.
+
+Instead of assigning permissions directly to individual users, an identity-based access model was implemented using Microsoft Entra ID security groups and Azure RBAC.
+
+The goal was to provide the required access while limiting unnecessary privileges.
+
+---
+
+# Objectives
+
+This project focuses on:
+
+- Understanding Azure identity and access management concepts
+- Implementing Microsoft Entra ID security groups
+- Applying Azure RBAC using least privilege principles
+- Reducing direct user permissions
+- Creating a scalable access management model
+- Validating effective permissions
+
+---
+
+# Identity Security Architecture
 
 ![RBAC architecture](screenshots/rbac-architecture-diagram.png)
 
+The access model follows a group-based RBAC approach:
+
+User → Microsoft Entra ID Security Group → Azure RBAC Role Assignment → Azure Resource Access
+
+
+Permissions are assigned to groups rather than individual users, improving security and maintainability.
+
 ---
 
-## Implementation (Security Controls)
+# Technologies Used
 
-- Create role-aligned Microsoft Entra ID groups to enforce administrative separation and reduce excessive privilege exposure.
-- Implement group-based RBAC instead of direct user role assignments to simplify identity governance and improve access management scalability.
-- Assign the Virtual Machine Contributor role to the Service Desk group to provide VM management capabilities without broader administrative permissions.
-- Use Azure Portal, PowerShell, and Azure CLI workflows to demonstrate operational flexibility across multiple administration interfaces.
+- Microsoft Entra ID
+- Azure Role-Based Access Control (RBAC)
+- Azure Portal
+- Azure PowerShell
+- Azure CLI
+
+---
+
+# Implementation
+
+## 1. Microsoft Entra ID Security Groups
+
+Security groups were created to represent different operational responsibilities.
+
+Using groups instead of direct user assignments allows permissions to be managed centrally and reduces administrative overhead.
 
 ![Group Configuration](screenshots/group-config.png)
 
-![PowerShell Administration](screenshots/powershell-admin.png)
+---
 
-![PowerShell Administration2](screenshots/powershell-admin2.png)
+## 2. Group-Based RBAC Assignment
 
-![Azure CLI Administration](screenshots/azure-cli.png)
+Azure RBAC permissions were assigned to groups instead of individual users.
 
-![Azure CLI Administration2](screenshots/azure-cli2.png)
+The Service Desk group was assigned the **Virtual Machine Contributor** role.
+
+This provides:
+
+- Virtual machine management capabilities
+- Required operational access
+- No unnecessary subscription-level permissions
 
 ![RBAC Assignment](screenshots/rbac-assignment.png)
 
-![RBAC Assignment2](screenshots/rbac-assignment2.png)
+![RBAC Assignment 2](screenshots/rbac-assignment2.png)
 
 ---
 
-## Architecture Decisions
+## 3. Administrative Management Workflows
 
-- Use security groups as the main RBAC boundary to keep things scalable, easier to audit, and simpler to manage over time.
-- Split administrative roles into separate groups to support Zero Trust principles and limit the risk of lateral movement.
-- Assign the Virtual Machine Contributor role to keep permissions at least-privilege while still allowing day-to-day support tasks.
-- Avoid assigning roles directly to users to reduce long-term maintenance overhead and prevent permission drift.
+Azure access management was performed using multiple administration methods:
+
+### Azure PowerShell
+
+PowerShell was used to demonstrate repeatable identity and access management workflows.
+
+![PowerShell Administration](screenshots/powershell-admin.png)
+
+![PowerShell Administration 2](screenshots/powershell-admin2.png)
+
+
+### Azure CLI
+
+Azure CLI was used to manage RBAC assignments and validate configuration through command-line workflows.
+
+![Azure CLI Administration](screenshots/azure-cli.png)
+
+![Azure CLI Administration 2](screenshots/azure-cli2.png)
 
 ---
 
-## Validation
+# Architecture Decisions
 
-- Verify group membership inheritance through Azure RBAC assignments.
-- Confirm Service Desk users can manage virtual machines without elevated subscription-level permissions.
-- Review effective permissions to validate least privilege enforcement and administrative segmentation.
+## Group-Based Access Control
+
+Permissions were assigned to security groups rather than individual users.
+
+Benefits:
+
+- Easier access management
+- Improved auditing
+- Reduced permission drift
+- Better scalability
 
 ---
 
-## Key Learnings
+## Least Privilege Access
 
-- Group-based RBAC provides a more scalable and secure access control model than direct user role assignments.
-- Administrative segmentation reduces identity attack surface and limits privilege escalation opportunities.
-- Azure Powershell and Azure CLI support repeatable and automatable identity management workflows.
-- Least privilege enforcement is more effective when permissions align to operational responsibilties rather than individual users. 
+The Service Desk role was limited to the permissions required for daily responsibilities.
+
+The Virtual Machine Contributor role was selected because:
+
+- The team requires VM management capabilities
+- They do not require full administrative access
+- Subscription-level permissions would increase security risk
+
+---
+
+## Separation of Duties
+
+Administrative responsibilities were separated to reduce the impact of compromised accounts.
+
+Limiting permissions based on job function supports Zero Trust security principles.
+
+---
+
+# Validation
+
+The configuration was validated by:
+
+- Confirming users inherited permissions through group membership
+- Reviewing Azure RBAC role assignments
+- Verifying the Service Desk group had VM management access
+- Confirming unnecessary administrative permissions were not assigned
+
+---
+
+# Key Learnings
+
+Through this project, I developed practical experience with:
+
+- Microsoft Entra ID identity management
+- Azure RBAC implementation
+- Least privilege access control
+- Group-based permission management
+- Identity security principles
+- Azure PowerShell and Azure CLI administration
+
+This project demonstrated how effective identity management reduces security risk by controlling who can access Azure resources and what actions they are allowed to perform.
