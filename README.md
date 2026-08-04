@@ -2,7 +2,7 @@
 
 A hands-on Azure security portfolio focused on cloud security fundamentals, identity protection, threat detection, monitoring, and incident response.
 
-This repository documents practical security projects designed to demonstrate the skills expected of a Junior SOC Analyst or Azure Cloud Security Analyst, including securing Azure resources, analysing security events, investigating threats, and improving cloud security posture.
+This repository documents practical security projects designed to demonstrate the skills expected of a SOC Analyst or Azure Cloud Security Analyst, including securing Azure resources, analysing security events, investigating threats, and improving cloud security posture.
 
 ---
 
