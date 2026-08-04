@@ -1,43 +1,142 @@
 # Azure Security Portfolio <img src="https://img.shields.io/badge/Status-In%20Development-orange" />
 
-Hands-on Azure security projects focused on real-world cloud defence, identity protection, monitoring, and incident response. This lab is built to strengthen practical skills and demonstrate Azure security experience.
+A hands-on Azure security portfolio focused on cloud security fundamentals, identity protection, threat detection, monitoring, and incident response.
+
+This repository documents practical security projects designed to demonstrate the skills expected of a Junior SOC Analyst or Azure Cloud Security Analyst, including securing Azure resources, analysing security events, investigating threats, and improving cloud security posture.
 
 ---
 
-## Lab Objectives
+# Portfolio Objectives
 
-- Build practical Azure security experience
-- Document real-world security configurations
-- Practice detection and incident response workflows
-- Develop cloud SOC and identity security skills
+This portfolio focuses on:
 
----
-
-## Lab Projects
-
-1. [Azure Environment Setup](1.Azure-Environment-Setup)
-2. [Secure Azure Identity](2.Secure-Azure-Identity)
-3. [Azure Network Security](3.Azure-Network-Security)
-4. [Microsoft Sentinel](4.Microsoft-Sentinel)
-5. [Microsoft Defender](5.Microsoft-Defender)
-6. [Incident Response](6.Incident-Response)
-7. [Phishing Investigation](7.Phishing-Investigation)
+- Building practical Azure security experience
+- Understanding core Azure security concepts and services
+- Implementing identity and access security controls
+- Deploying security monitoring and detection capabilities
+- Investigating security incidents using Microsoft security tools
+- Documenting security decisions, findings, and lessons learned
 
 ---
 
-## Technologies Used
+# Portfolio Structure
+
+The projects follow the lifecycle of securing and monitoring an Azure environment:
+
+Azure Foundation
+|
+↓
+Identity Security
+|
+↓
+Network Security
+|
+↓
+Security Monitoring & Threat Detection
+|
+↓
+Attack Simulation
+|
+↓
+Incident Response
+
+---
+
+# Projects
+
+## 1. Azure Foundation
+
+Establishing the core Azure environment required for security monitoring and investigation.
+
+Focus areas:
+
+- Azure resource configuration
+- Log Analytics
+- Microsoft Sentinel deployment
+- Security telemetry collection
+- KQL validation
+
+
+## 2. Identity Security
+
+Securing Azure identities and access controls using Microsoft Entra ID.
+
+Focus areas:
+
+- Authentication security
+- Role-based access control (RBAC)
+- Conditional Access
+- Least privilege principles
+
+
+## 3. Network Security
+
+Implementing Azure networking security controls.
+
+Focus areas:
+
+- Network segmentation
+- Network Security Groups
+- Azure Firewall
+- Secure connectivity
+
+
+## 4. Security Monitoring & Threat Detection
+
+Building security visibility and detection capabilities.
+
+Focus areas:
+
+- Microsoft Sentinel
+- Microsoft Defender
+- Security alerts
+- Log analysis
+- Detection engineering
+
+
+## 5. Attack Simulation
+
+Performing controlled attack scenarios to understand attacker behaviour and validate security controls.
+
+Focus areas:
+
+- Credential access
+- Execution techniques
+- Privilege escalation
+- Defence evasion
+- Lateral movement
+
+
+## 6. Incident Response
+
+Investigating security incidents using a SOC workflow.
+
+Focus areas:
+
+- Alert triage
+- Investigation
+- IOC analysis
+- Incident documentation
+- Response recommendations
+
+---
+
+# Technologies Used
 
 - Microsoft Azure
 - Microsoft Entra ID
 - Microsoft Sentinel
-- Defender for Cloud
+- Microsoft Defender for Cloud
+- Microsoft Defender for Office 365
 - Azure Monitor
-- Log Analytics
+- Log Analytics Workspace
 - KQL
 - PowerShell
 
 ---
 
-## Goal
+# Goal
 
-This repository documents my journey developing practical Azure security skills through hands-on projects, attack simulations, monitoring, and cloud security operations.
+The goal of this portfolio is to demonstrate practical Azure security knowledge through hands-on implementation, investigation, and documentation.
+
+Each project focuses on understanding not only **how** security controls are configured, but also **why** they are implemented and how they support real-world cloud security operations.
