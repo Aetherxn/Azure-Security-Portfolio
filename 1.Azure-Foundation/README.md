@@ -33,7 +33,7 @@ This project focuses on:
 
 # Architecture
 
-![Azure Foundation Architecture](architecture-diagram.jpg)
+![Azure Foundation Architecture](screenshots/architecture-diagram.jpg)
 
 The environment consists of:
 
