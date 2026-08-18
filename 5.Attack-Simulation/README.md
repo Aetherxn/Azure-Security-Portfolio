@@ -102,7 +102,7 @@ The objective of each simulation is to understand:
 
 #### Scenario
 
-A controlled simulation was used to investigate an attempt to disable Microsoft Defender Antivirus protection. The activity was treated as a potential Defence Evasion technique because an attacker may attempt to weaken or disable security controls to avoid detection.
+A controlled simulation was used to investigate an attempt to disable Microsoft Defender Antivirus protection. The activity represented a potential Defence Evasion technique because an attacker may attempt to weaken or disable security controls to avoid detection.
 
 #### Detection & Investigation
 
@@ -112,9 +112,11 @@ Microsoft Defender XDR generated a high-severity alert for an attempt to turn of
 
 I reviewed the affected device, user account, timestamp, process activity, and command-line information to understand what had occurred.
 
+![Defender Investigation](screenshots/defence-evasion-investigation.png)
+
 The investigation showed PowerShell activity attempting to modify the Defender Antivirus configuration through a registry change. The available telemetry also provided information about the process responsible for the activity and the changes being attempted.
 
-![Defender Investigation](screenshots/defence-evasion-investigation.png)
+![Registry Investigation Evidence](screenshots/defence-evasion-registry.png)
 
 #### MITRE ATT&CK
 
