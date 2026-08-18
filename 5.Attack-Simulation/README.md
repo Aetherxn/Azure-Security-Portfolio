@@ -42,6 +42,26 @@ This project focuses on:
 
 ---
 
+## Microsoft Defender XDR Foundation
+
+Before conducting the attack simulations, I developed a foundational understanding of Microsoft Defender XDR and how it supports security operations.
+
+The focus was on understanding how Defender XDR brings security signals together across Microsoft security products to provide a centralised view of threats, incidents, users, and devices.
+
+I also reviewed:
+
+- Defender XDR architecture and security signal integration
+- Unified Role-Based Access Control (RBAC)
+- Incident and alert investigation workflows
+- Security and investigation areas within the Defender portal
+
+### Why This Matters
+
+For a SOC analyst, effective use of Defender XDR is not simply about identifying an alert. It requires understanding how different security signals relate to each other and using that context to determine whether activity represents a genuine threat.
+
+This foundation provides the context for the attack simulations that follow, where I investigate how different attacker techniques appear within Defender telemetry and how those signals can support detection and investigation.
+
+---
 ## Simulation Methodology
 
 Each attack simulation will follow a defensive security validation approach:
