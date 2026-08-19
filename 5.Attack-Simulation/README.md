@@ -192,7 +192,52 @@ These techniques fall within the Defence Evasion tactic and provide context for 
 
 ### 5. Lateral Movement
 
-(To be completed)
+#### Scenario
+
+A controlled simulation was used to investigate a **hands-on-keyboard attack involving a compromised account**. The activity demonstrated how an attacker may use a compromised identity to perform discovery and move through an environment.
+
+#### Detection & Investigation
+
+Microsoft Defender XDR generated a **high-severity** alert for **"Compromised account conducting hands-on-keyboard attack"**.
+
+![Attack Activity](screenshots/lateral-movement-activity.png)
+
+I reviewed the incident timeline, affected device, alerts, assets, and process activity to understand how the attack unfolded.
+
+The investigation identified PowerShell activity involving domain controller discovery and additional suspicious command-line activity. Defender also detected and prevented execution of a malicious PowerShell component.
+
+![Defender Investigation](screenshots/lateral-movement-investigation.png)
+
+I then reviewed the available evidence to correlate the alerts, processes, and files involved in the incident and confirm the suspicious activity.
+
+![Investigation Evidence](screenshots/lateral-movement-evidence.png)
+
+#### MITRE ATT&CK
+
+The activity was associated with:
+
+- **System Owner/User Discovery**
+- **Account Discovery**
+- **Permission Groups Discovery**
+- **Account Discovery: Local Account**
+- **Account Discovery: Domain Account**
+
+These techniques fall within the MITRE ATT&CK framework and provide context for the observed discovery and lateral movement activity.
+
+#### Key Findings
+
+- Microsoft Defender XDR identified a high-severity hands-on-keyboard attack involving a compromised account.
+- PowerShell was used to perform domain discovery activity.
+- The investigation identified suspicious command-line and process activity.
+- Defender detected and prevented execution of a malicious PowerShell component.
+- The incident timeline and investigation evidence provided visibility into the sequence of activity.
+
+#### Security Improvements
+
+- Monitor for abnormal PowerShell and command-line activity.
+- Investigate compromised accounts showing unusual discovery behaviour.
+- Apply least-privilege access to limit the impact of compromised identities.
+- Monitor account and permission discovery activity across the environment.
 
 ---
 
