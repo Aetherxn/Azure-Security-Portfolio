@@ -94,7 +94,51 @@ The objective of each simulation is to understand:
 
 ### 3. Privilege Escalation
 
-(To be completed)
+#### Scenario
+
+A controlled simulation was used to investigate a **User Account Control (UAC) bypass** detected on a Windows 11 device. UAC bypass techniques can allow an attacker to execute actions with elevated privileges while avoiding normal user approval prompts.
+
+#### Detection & Investigation
+
+Microsoft Defender XDR generated an alert for **"UAC bypass was detected"**.
+
+![Attack Activity](screenshots/privilege-escalation-activity.png)
+
+![Attack Activity](screenshots/privilege-escalation-activity1.png)
+
+I reviewed the affected device, user account, timestamp, process activity, and investigation timeline to understand what had occurred.
+
+The activity involved `cmd.exe` and `powershell.exe`. I reviewed the available evidence and suspicious entities before using the process tree to confirm how the activity was executed and validate the detection.
+
+![Defender Investigation](screenshots/privilege-escalation-investigation.png)
+
+The investigation identified registry modification activity associated with the simulated attack.
+
+#### MITRE ATT&CK
+
+The activity was associated with:
+
+- **T1548.002 – Bypass User Account Control**
+- **T1112 – Modify Registry**
+
+These techniques fall within the MITRE ATT&CK framework and were used to provide context for the observed activity.
+
+#### Key Findings
+
+- Microsoft Defender XDR detected a medium-severity UAC bypass attempt associated with privilege escalation activity.
+- The affected Windows 11 device and user account were identified.
+- `cmd.exe` and `powershell.exe` were involved in the activity.
+- Process tree and timeline information helped validate the detection.
+- Registry modification activity was identified during the investigation.
+
+![MITRE ATT&CK Mapping](screenshots/privilege-escalation-mitre.png)
+
+#### Security Improvements
+
+- Apply least-privilege principles to reduce the impact of compromised accounts.
+- Monitor for suspicious UAC bypass and registry modification activity.
+- Investigate unexpected PowerShell and command-line activity involving privilege changes.
+- Keep Microsoft Defender security protections enabled and monitor attempts to bypass them.
 
 ---
 
