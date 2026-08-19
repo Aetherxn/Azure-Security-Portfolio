@@ -121,6 +121,8 @@ The activity was associated with:
 - **T1548.002 – Bypass User Account Control**
 - **T1112 – Modify Registry**
 
+![MITRE ATT&CK Mapping](screenshots/privilege-escalation-mitre.png)
+
 These techniques fall within the MITRE ATT&CK framework and were used to provide context for the observed activity.
 
 #### Key Findings
@@ -130,8 +132,6 @@ These techniques fall within the MITRE ATT&CK framework and were used to provide
 - `cmd.exe` and `powershell.exe` were involved in the activity.
 - Process tree and timeline information helped validate the detection.
 - Registry modification activity was identified during the investigation.
-
-![MITRE ATT&CK Mapping](screenshots/privilege-escalation-mitre.png)
 
 #### Security Improvements
 
