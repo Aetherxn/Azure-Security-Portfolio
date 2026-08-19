@@ -164,9 +164,14 @@ The investigation showed PowerShell activity attempting to modify the Defender A
 
 #### MITRE ATT&CK
 
-The activity was associated with the **Impair Defenses** technique under the Defence Evasion tactic.
+The activity was associated with:
+
+- **T1562.001 – Impair Defenses: Disable or Modify Tools**
+- **T1562.002 – Impair Defenses: Indicator Blocking**
 
 ![MITRE ATT&CK Mapping](screenshots/defence-evasion-mitre.png)
+
+These techniques fall within the Defence Evasion tactic and provide context for the observed activity.
 
 #### Key Findings
 
