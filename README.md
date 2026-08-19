@@ -44,14 +44,17 @@ Focus areas:
 
 ## 2. Identity Security
 
-Securing Azure identities and access controls using Microsoft Entra ID.
+Securing Azure identities and access using Microsoft Entra ID and Azure Role-Based Access Control (RBAC).
 
-Focus areas:
+Focus Areas:
 
-- Authentication security
-- Role-based access control (RBAC)
+- RBAC and least-privilege access
+- Identity and access management
+- Authentication and MFA
 - Conditional Access
-- Least privilege principles
+- Identity Protection
+- Privileged access
+- Zero Trust principles
 
 
 ## 3. Network Security
