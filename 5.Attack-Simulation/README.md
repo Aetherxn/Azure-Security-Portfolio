@@ -132,6 +132,13 @@ The activity was associated with the **Impair Defenses** technique under the Def
 - Registry modification activity was associated with the attempted change.
 - Defender XDR provided process, command-line, device, and user context for investigation.
 
+#### Security Improvements
+
+- Prevent unauthorised users from modifying Microsoft Defender Antivirus security settings.
+- Monitor for attempts to disable or weaken Defender protections.
+- Review PowerShell and registry activity associated with security-control changes.
+- Investigate and escalate high-severity alerts involving attempts to impair security controls.
+
 ---
 
 ### 5. Lateral Movement
