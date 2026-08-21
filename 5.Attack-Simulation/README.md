@@ -82,7 +82,42 @@ The objective of each simulation is to understand:
 
 ### 1. Execution
 
-(To be completed)
+#### Scenario
+
+A controlled simulation was used to investigate a suspicious PowerShell execution event on a Windows 11 device. The activity demonstrated how attackers may use scripting and command-line tools to execute potentially malicious code.
+
+#### Detection & Investigation
+
+Microsoft Defender XDR generated a **medium-severity** alert for **"A script with suspicious content was observed"**.
+
+![Attack Activity](screenshots/execution-activity.png)
+
+I reviewed the affected device, user account, timestamp, alert details, process activity, and command-line information to understand what had occurred.
+
+The investigation identified suspicious behaviour involving `cmd.exe`. The command-line activity showed `csc.exe` being used to compile a C# file associated with the simulated attack. This provided additional context about how the suspicious code was executed on the device.
+
+![Defender Investigation](screenshots/execution-investigation.png)
+
+I reviewed the available script and event information to understand the activity and assess whether the execution was consistent with malicious behaviour.
+
+![Investigation Evidence](screenshots/execution-evidence.png)
+
+#### MITRE ATT&CK
+
+The activity was associated with:
+
+- **T1059.003 – Windows Command Shell**
+- **T1218.014 – MMC**
+
+These techniques fall within the MITRE ATT&CK framework and provide context for the observed execution activity.
+
+#### Security Improvements
+
+- Monitor suspicious PowerShell and command-line execution.
+- Investigate scripts and executables running from unusual locations.
+- Use endpoint protection to detect and prevent malicious script execution.
+- Isolate affected devices when malicious execution is confirmed.
+- Use additional investigation and threat-hunting capabilities to identify related activity.
 
 ---
 
