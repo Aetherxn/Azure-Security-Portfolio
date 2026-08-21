@@ -112,8 +112,6 @@ The activity involved `cmd.exe` and `powershell.exe`. I reviewed the available e
 
 The investigation identified registry modification activity associated with the simulated UAC bypass. The process tree and timeline provided additional context to validate the detection.
 
-![Investigation Evidence](screenshots/privilege-escalation-mitre.png)
-
 #### MITRE ATT&CK
 
 The activity was associated with:
