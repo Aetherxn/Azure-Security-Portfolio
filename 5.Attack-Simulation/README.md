@@ -100,19 +100,19 @@ A controlled simulation was used to investigate a **User Account Control (UAC) b
 
 #### Detection & Investigation
 
-Microsoft Defender XDR generated an alert for **"UAC bypass was detected"**.
+Microsoft Defender XDR generated a **medium-severity** alert for **"UAC bypass was detected"**.
 
 ![Attack Activity](screenshots/privilege-escalation-activity.png)
 
-![Attack Activity](screenshots/privilege-escalation-activity1.png)
-
 I reviewed the affected device, user account, timestamp, process activity, and investigation timeline to understand what had occurred.
 
-The activity involved `cmd.exe` and `powershell.exe`. I reviewed the available evidence and suspicious entities before using the process tree to confirm how the activity was executed and validate the detection.
+The activity involved `cmd.exe` and `powershell.exe`. I reviewed the available evidence and suspicious entities before using the process tree to validate how the activity was executed.
 
 ![Defender Investigation](screenshots/privilege-escalation-investigation.png)
 
-The investigation identified registry modification activity associated with the simulated attack.
+The investigation identified registry modification activity associated with the simulated UAC bypass. The process tree and timeline provided additional context to validate the detection.
+
+![Investigation Evidence](screenshots/privilege-escalation-mitre.png)
 
 #### MITRE ATT&CK
 
@@ -121,17 +121,7 @@ The activity was associated with:
 - **T1548.002 – Bypass User Account Control**
 - **T1112 – Modify Registry**
 
-![MITRE ATT&CK Mapping](screenshots/privilege-escalation-mitre.png)
-
 These techniques fall within the MITRE ATT&CK framework and were used to provide context for the observed activity.
-
-#### Key Findings
-
-- Microsoft Defender XDR detected a medium-severity UAC bypass attempt associated with privilege escalation activity.
-- The affected Windows 11 device and user account were identified.
-- `cmd.exe` and `powershell.exe` were involved in the activity.
-- Process tree and timeline information helped validate the detection.
-- Registry modification activity was identified during the investigation.
 
 #### Security Improvements
 
@@ -150,7 +140,7 @@ A controlled simulation was used to investigate an attempt to disable Microsoft 
 
 #### Detection & Investigation
 
-Microsoft Defender XDR generated a high-severity alert for an attempt to turn off Microsoft Defender Antivirus protection.
+Microsoft Defender XDR generated a **high-severity** alert for an attempt to turn off Microsoft Defender Antivirus protection.
 
 ![Defender Alert](screenshots/defence-evasion-alert.png)
 
@@ -158,9 +148,11 @@ I reviewed the affected device, user account, timestamp, process activity, and c
 
 ![Defender Investigation](screenshots/defence-evasion-investigation.png)
 
-The investigation showed PowerShell activity attempting to modify the Defender Antivirus configuration through a registry change. The available telemetry also provided information about the process responsible for the activity and the changes being attempted.
+The investigation showed PowerShell activity attempting to modify the Defender Antivirus configuration through a registry change. The available telemetry provided information about the process responsible for the activity and the changes being attempted.
 
-![Registry Investigation Evidence](screenshots/defence-evasion-registry.png)
+![Investigation Evidence](screenshots/defence-evasion-registry.png)
+
+The investigation confirmed that the activity was associated with an attempt to impair Defender protections and provided process, command-line, device, and user context for further investigation.
 
 #### MITRE ATT&CK
 
@@ -169,17 +161,7 @@ The activity was associated with:
 - **T1562.001 – Impair Defenses: Disable or Modify Tools**
 - **T1562.002 – Impair Defenses: Indicator Blocking**
 
-![MITRE ATT&CK Mapping](screenshots/defence-evasion-mitre.png)
-
 These techniques fall within the Defence Evasion tactic and provide context for the observed activity.
-
-#### Key Findings
-
-- A high-severity Defender alert identified an attempt to disable Microsoft Defender Antivirus.
-- PowerShell was involved in the activity.
-- The investigation identified the affected device and user account.
-- Registry modification activity was associated with the attempted change.
-- Defender XDR provided process, command-line, device, and user context for investigation.
 
 #### Security Improvements
 
@@ -212,6 +194,8 @@ I then reviewed the available evidence to correlate the alerts, processes, and f
 
 ![Investigation Evidence](screenshots/lateral-movement-evidence.png)
 
+The investigation provided visibility into the sequence of activity and showed how Defender XDR correlated suspicious processes, files, and account activity within the incident.
+
 #### MITRE ATT&CK
 
 The activity was associated with:
@@ -223,14 +207,6 @@ The activity was associated with:
 - **Account Discovery: Domain Account**
 
 These techniques fall within the MITRE ATT&CK framework and provide context for the observed discovery and lateral movement activity.
-
-#### Key Findings
-
-- Microsoft Defender XDR identified a high-severity hands-on-keyboard attack involving a compromised account.
-- PowerShell was used to perform domain discovery activity.
-- The investigation identified suspicious command-line and process activity.
-- Defender detected and prevented execution of a malicious PowerShell component.
-- The incident timeline and investigation evidence provided visibility into the sequence of activity.
 
 #### Security Improvements
 
