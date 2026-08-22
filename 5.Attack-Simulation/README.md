@@ -123,7 +123,51 @@ These techniques fall within the MITRE ATT&CK framework and provide context for 
 
 ### 2. Credential Access
 
-(To be completed)
+#### Scenario
+
+A controlled simulation was used to investigate a potential **password-spray attack** involving failed sign-in attempts and a suspicious login from an unfamiliar IP address.
+
+The objective was to determine whether credentials were being targeted and identify any evidence of account compromise.
+
+#### Detection & Investigation
+
+Microsoft Defender XDR generated alerts relating to suspicious activity on a potentially compromised device.
+
+![Attack Activity](screenshots/credential-access-activity.png)
+
+I reviewed the affected device, associated accounts, alert timeline, and available authentication and process activity.
+
+The investigation did **not confirm a password-spray attack**. Instead, the available Defender telemetry identified a compromised account and additional suspicious activity associated with the affected device, including PowerShell activity and alerts relating to lateral movement and malware.
+
+![Defender Investigation](screenshots/credential-access-investigation.png)
+
+I reviewed the available investigation evidence and used Advanced Hunting to search for additional activity associated with the affected device.
+
+![Investigation Evidence](screenshots/credential-access-evidence.png)
+
+![Advanced Hunting](screenshots/credential-access-hunting.png)
+
+The investigation therefore shifted from validating the initial password-spray hypothesis to assessing the evidence of account compromise and related attacker activity.
+
+#### MITRE ATT&CK
+
+The investigation included activity associated with:
+
+- **T1033 – System Owner/User Discovery**
+- **T1087 – Account Discovery**
+- **T1069 – Permission Groups Discovery**
+- **T1087.001 – Local Account**
+- **T1087.002 – Domain Account**
+
+These techniques provided context for the observed activity associated with the compromised device.
+
+#### Security Improvements
+
+- Monitor for suspicious authentication and account activity.
+- Investigate unusual PowerShell activity associated with compromised accounts.
+- Use Advanced Hunting to identify related activity across affected devices.
+- Isolate compromised devices when active attacker activity is confirmed.
+- Use automated investigation and response capabilities to contain and remediate threats.
 
 ---
 
