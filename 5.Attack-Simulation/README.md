@@ -296,16 +296,51 @@ These techniques fall within the MITRE ATT&CK framework and provide context for 
 
 ## Investigation Workflow
 
-(To be completed)
+The simulations followed a consistent defensive investigation workflow:
+
+**Attack Activity → Defender Detection → Alert Triage → Evidence Review → Investigation → Validation → Security Improvements**
+
+For each scenario, I reviewed:
+
+- Affected users and devices
+- Alert severity and detection details
+- Process and command-line activity
+- Incident timelines and related alerts
+- Available investigation evidence
+- Relevant MITRE ATT&CK techniques
+- Additional telemetry where available through Advanced Hunting
+
+The objective was to validate the detection, understand the observed activity, and determine appropriate defensive actions.
 
 ---
 
 ## Security Improvements
 
-(To be completed)
+The simulations highlighted several areas that can strengthen security controls and detection capabilities:
+
+- Apply least-privilege access to limit the impact of compromised accounts.
+- Monitor suspicious PowerShell, command-line, and registry activity.
+- Strengthen controls around privileged access and UAC bypass attempts.
+- Monitor authentication and account discovery activity for signs of compromise.
+- Maintain and monitor endpoint protection to prevent attempts to impair security controls.
+- Use Microsoft Defender investigation and Advanced Hunting capabilities to identify related activity.
+- Isolate affected devices when active malicious activity is confirmed.
+- Regularly review security detections and response processes to improve visibility and reduce attacker dwell time.
 
 ---
 
 ## Key Learnings
 
-(To be completed)
+This project strengthened my understanding of how Microsoft Defender XDR can be used from a defensive security perspective.
+
+Key areas developed through the simulations included:
+
+- Investigating security alerts and incidents using Defender XDR
+- Analysing process, command-line, device, and user activity
+- Understanding how attacker techniques generate security telemetry
+- Using MITRE ATT&CK to provide context to observed activity
+- Using Advanced Hunting to investigate related events
+- Validating detections using available evidence rather than relying solely on alert descriptions
+- Identifying security improvements based on observed attacker behaviour
+
+The simulations reinforced the importance of correlating multiple sources of evidence when investigating an incident and distinguishing between the **initial alert hypothesis and what the available evidence actually demonstrates**.
