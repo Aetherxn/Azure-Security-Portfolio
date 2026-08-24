@@ -20,6 +20,15 @@ The investigation followed a SOC incident response workflow:
 
 ---
 
+# Tools Used
+
+- Microsoft Sentinel
+- Microsoft Defender for Office 365
+- Microsoft Entra ID
+- Azure Monitor
+
+---
+
 # Incident Details
 
 | Category | Details |
@@ -240,12 +249,3 @@ This investigation reinforced the importance of validating evidence before deter
 A phishing alert does not automatically mean a security breach has occurred. The role of the analyst is to collect evidence, investigate related activity, determine impact, and recommend appropriate response actions.
 
 By combining email analysis with identity monitoring, the investigation demonstrated how multiple security data sources can be used together to validate phishing incidents and support effective incident response.
-
----
-
-# Tools Used
-
-- Microsoft Sentinel
-- Microsoft Defender for Office 365
-- Microsoft Entra ID
-- Azure Monitor
