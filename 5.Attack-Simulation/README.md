@@ -137,7 +137,7 @@ Microsoft Defender XDR generated alerts relating to suspicious activity on a pot
 
 I reviewed the affected device, associated accounts, alert timeline, and available authentication and process activity.
 
-The investigation did **not confirm a password-spray attack**. Instead, the available Defender telemetry identified a compromised account and additional suspicious activity associated with the affected device, including PowerShell activity and alerts relating to lateral movement and malware.
+The investigation did not confirm a password-spray attack. Instead, the available Defender telemetry identified a compromised account and additional suspicious activity associated with the affected device.
 
 ![Defender Investigation](screenshots/credential-access-investigation.png)
 
