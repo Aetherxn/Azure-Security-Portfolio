@@ -18,7 +18,7 @@ Hands-on implementation of Microsoft Entra ID security groups and Azure RBAC to 
 
 ### 2. Entra ID Security
 
-Practical exploration of Microsoft Entra ID security, covering identity management, authentication, MFA, Conditional Access, Identity Protection, Privileged Identity Management (PIM), and Zero Trust principles.
+Focused study of Microsoft Entra ID identity and access security, including authentication, MFA, Conditional Access, Identity Protection, PIM, and Zero Trust.
 
 [View Project](Entra-ID-Security)
 
